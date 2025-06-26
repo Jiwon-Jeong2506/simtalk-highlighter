@@ -1,0 +1,41 @@
+{
+  "name": "simtalk-highlighter",
+  "displayName": "SimTalk Highlighter",
+  "description": "Plant Simualtion - SimTalk 2.0 syntax highlighting and code snippets.",
+  "icon": "icon.png",
+  "version": "0.0.3",
+  "publisher": "jiwon-jeong",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jiwon-Jeong2506/simtalk-highlighter.git"
+  },
+  "engines": {
+    "vscode": "*"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "simtalk",
+    "plant simulation",
+    "plantsimulation"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "simtalk",
+      "aliases": ["SimTalk", "simtalk"],
+      "extensions": [".st",".spp"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "simtalk",
+      "scopeName": "source.simtalk",
+      "path": "./syntaxes/simtalk.tmLanguage.json"
+    }],
+    "snippets": [{
+      "language": "simtalk",
+      "path": "./snippets/simtalk.json"
+    }]
+  }
+}

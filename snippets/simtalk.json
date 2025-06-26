@@ -1,0 +1,91 @@
+{
+	"Method Signature": {
+		"prefix": "signature",
+		"body": [
+			"param ${1:paramName}: ${2:string} -> ${3:boolean}"
+		],
+		"description": "Inserts a method signature (param -> return type)"
+	},
+	"Variable Declaration": {
+		"prefix": "var",
+		"body": [
+			"var ${1:myVariable}: ${2:string}"
+		],
+		"description": "Declares a local variable"
+	},
+	"Parameter Declaration": {
+		"prefix": "param",
+		"body": [
+			"param ${1:myParam}: ${2:integer}"
+		],
+		"description": "Declares a parameter"
+	},
+	"if...end block": {
+		"prefix": "if",
+		"body": [
+			"if ${1:condition}",
+			"\t$0",
+			"end"
+		],
+		"description": "Inserts an if...end block"
+	},
+	"if...else...end block": {
+		"prefix": "ifelse",
+		"body": [
+			"if ${1:condition}",
+			"\t${2}",
+			"else",
+			"\t$0",
+			"end"
+		],
+		"description": "Inserts an if...else...end block"
+	},
+	"for...next loop": {
+		"prefix": "for",
+		"body": [
+			"for var ${1:i} := 1 to ${2:10}",
+			"\t$0",
+			"next"
+		],
+		"description": "Inserts a for...next loop"
+	},
+	"while...end loop": {
+		"prefix": "while",
+		"body": [
+			"while ${1:condition}",
+			"\t$0",
+			"end"
+		],
+		"description": "Inserts a while...end loop"
+	},
+	"repeat...until loop": {
+		"prefix": "repeat",
+		"body": [
+			"repeat",
+			"\t$0",
+			"until ${1:condition}"
+		],
+		"description": "Inserts a repeat...until loop"
+	},
+	"switch...case block": {
+		"prefix": "switch",
+		"body": [
+			"switch ${1:variable}",
+			"\tcase ${2:value1}",
+			"\t\t$0",
+			"\tcase ${3:value2}",
+			"\t\t",
+			"\telse",
+			"\t\t",
+			"end"
+		],
+		"description": "Inserts a switch...case block"
+	},
+	"print statement": {
+		"prefix": "print",
+		"body": [
+			"print \"${1:message}\""
+		],
+		"description": "Inserts a print statement"
+	}
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "SimTalk",
+  "scopeName": "source.simtalk",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#keywords" },
+    { "include": "#storage" },
+    { "include": "#constants" },
+    { "include": "#operators" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#functions" },
+    { "include": "#entities" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.double-slash.simtalk", "match": "//.*$" },
+        { "name": "comment.line.double-dash.simtalk", "match": "--.*$" },
+        { "name": "comment.block.documentation.simtalk", "match": "(---|///).*$" },
+        { "name": "comment.block.simtalk", "begin": "/\\*", "end": "\\*/"}
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        { "name": "keyword.control.simtalk", "match": "\\b(?i)(if|then|else|elseif|end|for|to|downto|next|while|loop|repeat|until|switch|case|continue|exitloop|return|waituntil|stopuntil|prio|wait)\\b" },
+        { "name": "keyword.operator.logical.simtalk", "match": "\\b(?i)(and|or|not)\\b" },
+        { "name": "keyword.operator.arithmetic.simtalk", "match": "\\b(?i)(div|mod)\\b" }
+      ]
+    },
+    "storage": {
+      "patterns": [
+        { "name": "storage.type.simtalk", "match": "\\b(?i)(param|var|byref)\\b" },
+        { "name": "storage.type.datatype.simtalk", "match": "\\b(?i)(integer|real|boolean|string|any|date|dateTime|length|speed|acceleration|weight|time|money|object|table|list|stack|queue|method|json|array)\\b" }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        { "name": "constant.language.simtalk", "match": "\\b(?i)(true|false|void|pi)\\b" },
+        { "name": "variable.language.anonymous.simtalk", "match": "(@|\\?|\\b(?i)(self|current|root|RootFolder|basis))\\b" }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        { "name": "keyword.operator.assignment.simtalk", "match": "(:=|\\+=|-=|\\*=|/=|~=|<=|>=|<>|<|>|=|\\/=)" },
+        { "name": "keyword.operator.reference.simtalk", "match": "&" },
+        { "name": "keyword.operator.return.simtalk", "match": "->" }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.simtalk",
+      "begin": "\"", "end": "\"",
+      "patterns": [ { "name": "constant.character.escape.simtalk", "match": "\\\\." } ]
+    },
+    "numbers": {
+      "patterns": [
+        { "name": "constant.numeric.physical.simtalk", "match": "\\b[0-9]+(\\.[0-9]+)?(?i)(m|mm|km|cm|yd|ft|in|s|mps|fps|kmh|mph|mps2|fps2|g|kg|t|lb|oz)\\b" },
+        { "name": "constant.numeric.real.simtalk", "match": "\\b[0-9]+\\.[0-9]+\\b" },
+        { "name": "constant.numeric.integer.simtalk", "match": "\\b[0-9]+\\b" }
+      ]
+    },
+    "functions": { "patterns": [ { "name": "entity.name.function.simtalk", "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)(?=\\()" } ] },
+    "entities": { "patterns": [ { "name": "variable.other.location.simtalk", "match": "(?<=\\.)(~)" } ] }
+  }
+}
