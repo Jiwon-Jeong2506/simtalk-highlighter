@@ -1,22 +1,27 @@
 {
-	"Method Signature": {
-		"prefix": "signature",
+	"SimTalk Method Template": {
+		"prefix": "method",
 		"body": [
-			"param ${1:paramName}: ${2:string} -> ${3:boolean}"
+			"param ${1:parameterName}: ${2:string}",
+			"",
+			"var ${3:variableName}: ${4:integer}",
+			"",
+			"-- main code starts here",
+			"$0"
 		],
-		"description": "Inserts a method signature (param -> return type)"
+		"description": "Inserts a template for a new method body"
 	},
 	"Variable Declaration": {
 		"prefix": "var",
 		"body": [
-			"var ${1:myVariable}: ${2:string}"
+			"var ${1:myVariable}: ${2:string};"
 		],
 		"description": "Declares a local variable"
 	},
 	"Parameter Declaration": {
 		"prefix": "param",
 		"body": [
-			"param ${1:myParam}: ${2:integer}"
+			"param ${1:myParam}: ${2:integer};"
 		],
 		"description": "Declares a parameter"
 	},
@@ -80,12 +85,5 @@
 			"end"
 		],
 		"description": "Inserts a switch...case block"
-	},
-	"print statement": {
-		"prefix": "print",
-		"body": [
-			"print \"${1:message}\""
-		],
-		"description": "Inserts a print statement"
 	}
 }
